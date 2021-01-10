@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="The Board Header">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title></title>
+    <!---
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+</head>
+<header>
+  <div>
+    <%- include('partials/header') %>
+  </div>
+</header>
+<body class="bg-light">
+  <main>
+
+    <div class="wrapper-main" style="text-align:center">
+      <section class="section-default">
+        <h1 class="center" style="padding: 20px;">Search</h1>
+        <form class="form-inline center" action="/search" method="post">
+          <input class="mx-auto" type="text" placeholder="Search The Board.." name="searchUsers">
+        </form>
+        <%
+        searchResult.forEach( result => {
+        %>
+        <div class="card mx-auto" style="width: 40rem; margin: 20px">
+          <div class="card-header">
+            <%=result.uidUsers%>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%=result.Fname%> <%=result.Lname%></h5>
+            <p class="card-text"><%=result.Bio%></p>
+            <button type="submit" class="btn btn=primary" name="friend">Add Friend</button>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <%
+        })
+        %>
+    </div>
+  </main>
+</body>

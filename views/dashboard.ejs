@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="The Board Header">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+</head>
+<header>
+  <div>
+    <%- include('partials/header') %>
+  </div>
+</header>
+<body>
+  <!--
+  <img src="..." class="img-fluid" alt="Responsive image">
+  <form action="dashboard" method="post" enctype="multipart/form-data" >
+    <input type="file" name="background">
+    <input type="submit" value="Submit">
+  </form>
+  <br>
+-->
+<!-- dashboard banner -->
+  <div class="card mx-auto" style="width: 50rem; padding: 40px;">
+  <img class="card-img-top" src="banner.jpg" alt="Card image cap" width="200px" height="350px">
+  <div class="card-body">
+    <h5 class="card-title"><%=userResult[0].uidUsers%></h5>
+    <p class="card-text"><%=userResult[0].Bio%></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%=userResult[0].Fname%> <%=userResult[0].Lname%></li>
+  </ul>
+  <div class="card-body">
+    <button class="btn btn-primary" onclick="changeBio()">Update Bio</button>
+    <div id="bio"></div>
+  </div>
+</div>
+  <div class="wrapper-main" style="text-align:center">
+    <!--Post Input Box-->
+    <div class="card mx-auto" style="width: 50rem; margin: 10px">
+      <div class="card-body" >
+        <form action="dashboard" class="form-signup"  method="post">
+          <div class="form-row">
+            <div class=" card-title col-11">
+              <input type="text" class="form-control" id="postMessage" name="feedPost"  placeholder="Create Post">
+            </div>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary mb-2" name="feed-btn" aria-pressed="true" role="button">Post</button><br>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End of dashboard-->
+    <!-- Write get statement that sends feed variables -->
+    <!-- Feed -->
+    <div class="card mx-auto" style="width: 50rem;">
+      <ul class="list-group list-group-flush">
+        <%
+        feedResult.forEach(result => { %>
+          <li class="list-group-item"><p><%=result.uidUsers%></p><%=result.Feed_Post%></li>
+        <%
+        })
+        %>
+      </ul>
+    </div>
+    <!-- End of Feed -->
+  </div>
+</body>
+
+<script type="text/javascript">
+  function changeBio(){
+  var bio = document.getElementById("bio");
+  bio.innerHTML = '<form action="dashboard" class="form-signup" method="post"> <div class="form-group"> <input type="text" class="form-control" name="bio" placeholder="Update Bio"> </div> <button type="submit" class="btn btn-primary" name="send-post">Send</button> </form>';
+}
+</script>

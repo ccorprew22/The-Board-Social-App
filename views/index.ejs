@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="The Board Header">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title></title>
+    <!---
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+</head>
+<header>
+  <div style="bottom:0;">
+    <%- include('partials/header') %>
+  </div>
+
+</header>
+<body>
+
+<main>
+  <div class="wrapper-main">
+<div class="jumbotron bg-light">
+  <h1 class="display-1 text-dark">Welcome to THE BOARD!</h1>
+  <h4 class="text-dark">See what everybody is up to!</h4>
+  <hr class="my-4">
+  <p class="text-dark">Join today!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/signup" role="button">Signup</a>
+  </p>
+</div>
+</div>
+</main>
+</body>
+<footer>
+  <div style="bottom:0;">
+    <%- include('partials/footer') %>
+  </div>
+</footer>
