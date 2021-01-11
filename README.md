@@ -6,5 +6,8 @@ As a way to learn Node JS and Express JS over the winter break, I decided to cre
 
 app.js
 
+# Remaining Objectives
+
+I want to try and make a realtime messaging system between two specific users and I want to involve encryption in the signup/login process.
 
 
